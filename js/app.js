@@ -6,7 +6,7 @@
     // 属性
     data: {
       newTodo: '',
-      todos: [],
+      todos: todoStorage.fetch(),
       editedTodo: null,
       beforeEditCache: ''
     },
@@ -18,7 +18,10 @@
     },
     // 属性观察
     watch: {
-
+      todos: {
+        deep: true,
+        handler: todoStorage.save
+      }
     },
     // 方法集合
     methods: {
