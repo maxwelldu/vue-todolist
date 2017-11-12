@@ -374,3 +374,7 @@ html .clear-completed:active {
 		bottom: 10px;
 	}
 }
+.help {
+	color: #333;
+	text-decoration: none;
+}
