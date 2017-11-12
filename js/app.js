@@ -5,7 +5,16 @@
     el: '.todoapp',
     // 属性
     data: {
-
+      todos: [
+        {
+          title: '学Vue',
+          completed: true
+        },
+        {
+          title: '学React',
+          completed: false
+        }
+      ]
     },
     // 计算属性
     computed: {

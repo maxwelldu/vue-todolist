@@ -15,12 +15,17 @@
     <input class="toggle-all" id="toggle-all" type="checkbox" />
     <label for="toggle-all">一键全部完成</label>
     <ul class="todo-list">
-     <li>
-      <div class="view">
-       <input class="toggle" type="checkbox" />
-       <label>a</label>
-       <button class="destroy"></button>
-      </div> <input class="edit" value="a" /> </li>
+      <li
+        v-for="(todo, index) in todos"
+        :key="'todo-' + index"
+      >
+        <div class="view">
+         <input class="toggle" type="checkbox" />
+         <label>{{ todo.title }}</label>
+         <button class="destroy"></button>
+        </div>
+        <input class="edit" value="a" />
+      </li>
     </ul>
    </section>
    <footer class="footer" style="display: block;">
