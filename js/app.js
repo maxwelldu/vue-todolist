@@ -1,4 +1,9 @@
 (function(){
+  var filters = {
+    all: todos => todos,
+    active: todos => todos.filter(todo => !todo.completed),
+    completed: todos => todos.filter(todo => todo.completed)
+  }
   // 实例化
   var app = new Vue({
     // 挂载元素
@@ -14,6 +19,19 @@
     computed: {
       showTodos() {
         return this.todos.length > 0
+      },
+      activeCount() {
+        return filters.active(this.todos).length;
+      },
+      allDone: {
+        get() {
+          return this.activeCount === 0
+        },
+        set(value) {
+          this.todos.map(todo => {
+            todo.completed = value
+          })
+        }
       }
     },
     // 属性观察

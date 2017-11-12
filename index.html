@@ -17,7 +17,9 @@
    <section class="main"
    v-show="showTodos"
    >
-    <input class="toggle-all" id="toggle-all" type="checkbox" />
+    <input class="toggle-all" id="toggle-all" type="checkbox"
+    v-model="allDone"
+    />
     <label for="toggle-all">一键全部完成</label>
     <ul class="todo-list">
       <li
