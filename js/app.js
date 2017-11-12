@@ -86,6 +86,9 @@
           todo.title = this.beforeEditCache
           this.editedTodo = null
         }
+      },
+      removeCompleted() {
+        this.todos = filters.active(this.todos)
       }
     },
     // 指令集合
