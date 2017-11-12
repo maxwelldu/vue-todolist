@@ -9,7 +9,10 @@
   <section class="todoapp">
    <header class="header">
     <h1>云备忘录</h1>
-    <input class="new-todo" placeholder="接下来要做什么?" autofocus="" />
+    <input class="new-todo" placeholder="接下来要做什么?" autofocus=""
+    v-model="newTodo"
+    @keyup.enter="addTodo"
+    />
    </header>
    <section class="main" style="display: block;">
     <input class="toggle-all" id="toggle-all" type="checkbox" />

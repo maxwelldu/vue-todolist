@@ -5,6 +5,7 @@
     el: '.todoapp',
     // 属性
     data: {
+      newTodo: '',
       todos: [
         {
           title: '学Vue',
@@ -26,7 +27,17 @@
     },
     // 方法集合
     methods: {
-
+      addTodo() {
+        this.newTodo = this.newTodo.trim()
+        if (this.newTodo.length < 1) {
+          return
+        }
+        this.todos.unshift({
+          title: this.newTodo,
+          completed: false
+        })
+        this.newTodo = ''
+      }
     },
     // 指令集合
     directive: {
