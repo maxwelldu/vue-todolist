@@ -18,9 +18,12 @@
       <li
         v-for="(todo, index) in todos"
         :key="'todo-' + index"
+        :class="{ completed: todo.completed }"
       >
         <div class="view">
-         <input class="toggle" type="checkbox" />
+         <input class="toggle" type="checkbox"
+         v-model="todo.completed"
+         />
          <label>{{ todo.title }}</label>
          <button class="destroy"></button>
         </div>
