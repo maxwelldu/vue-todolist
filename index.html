@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="./node_modules/todomvc-app-css/index.css">
-  </head>
-  <body>
-    <section class="todoapp">
-			<header class="header">
-				<h1>云备忘录</h1>
-				<input class="new-todo" placeholder="接下来要做什么?" autofocus="">
-			</header>
-			<section class="main" style="display: block;">
-				<input class="toggle-all" id="toggle-all" type="checkbox">
-				<label for="toggle-all">一键全部完成</label>
-				<ul class="todo-list">
-        <li>
-  			<div class="view">
-  				<input class="toggle" type="checkbox">
-  				<label>a</label>
-  				<button class="destroy"></button>
-  			</div>
-  			<input class="edit" value="a">
-    		</li>
-      </ul>
-			</section>
-			<footer class="footer" style="display: block;">
-			<span class="todo-count"><strong>2</strong> 项未完成</span>
-			<ul class="filters">
-				<li>
-					<a class="selected" href="#/">全部</a>
-				</li>
-				<li>
-					<a href="#/active">未完成</a>
-				</li>
-				<li>
-					<a href="#/completed">已完成</a>
-				</li>
-			</ul>
-      <button class="clear-completed">清空已完成</button>
-		</footer>
-		</section>
-  </body>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="./node_modules/todomvc-app-css/index.css" />
+ </head>
+ <body>
+  <section class="todoapp">
+   <header class="header">
+    <h1>云备忘录</h1>
+    <input class="new-todo" placeholder="接下来要做什么?" autofocus="" />
+   </header>
+   <section class="main" style="display: block;">
+    <input class="toggle-all" id="toggle-all" type="checkbox" />
+    <label for="toggle-all">一键全部完成</label>
+    <ul class="todo-list">
+     <li>
+      <div class="view">
+       <input class="toggle" type="checkbox" />
+       <label>a</label>
+       <button class="destroy"></button>
+      </div> <input class="edit" value="a" /> </li>
+    </ul>
+   </section>
+   <footer class="footer" style="display: block;">
+    <span class="todo-count"><strong>2</strong> 项未完成</span>
+    <ul class="filters">
+     <li> <a class="selected" href="#/">全部</a> </li>
+     <li> <a href="#/active">未完成</a> </li>
+     <li> <a href="#/completed">已完成</a> </li>
+    </ul>
+    <button class="clear-completed">清空已完成</button>
+   </footer>
+  </section>
+ </body>
 </html>
