@@ -6,16 +6,8 @@
     // 属性
     data: {
       newTodo: '',
-      todos: [
-        {
-          title: '学Vue',
-          completed: true
-        },
-        {
-          title: '学React',
-          completed: false
-        }
-      ]
+      todos: [],
+      editingTodo: null
     },
     // 计算属性
     computed: {
@@ -42,6 +34,9 @@
       },
       deleteTodo(todo) {
         this.todos = _.without(this.todos, todo)
+      },
+      editTodo(todo) {
+        this.editingTodo = todo
       }
     },
     // 指令集合

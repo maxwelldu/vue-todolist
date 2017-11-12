@@ -23,18 +23,18 @@
       <li
         v-for="(todo, index) in todos"
         :key="'todo-' + index"
-        :class="{ completed: todo.completed }"
+        :class="{ completed: todo.completed, editing: todo === editingTodo}"
       >
         <div class="view">
          <input class="toggle" type="checkbox"
          v-model="todo.completed"
          />
-         <label>{{ todo.title }}</label>
+         <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
          <button class="destroy"
            @click="deleteTodo(todo)"
          ></button>
         </div>
-        <input class="edit" value="a" />
+        <input class="edit" v-model="todo.title" />
       </li>
     </ul>
    </section>
