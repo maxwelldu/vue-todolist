@@ -1,0 +1,25 @@
+{
+  "name": "vue-todolist",
+  "version": "1.0.0",
+  "description": "基于Vue的TodoList示例，麻雀虽小，五脏俱全",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxwelldu/vue-todolist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxwelldu/vue-todolist/issues"
+  },
+  "homepage": "https://github.com/maxwelldu/vue-todolist#readme",
+  "dependencies": {
+    "todomvc-app-css": "^2.1.0",
+    "underscore": "^1.8.3",
+    "vue": "^2.5.3"
+  }
+}
