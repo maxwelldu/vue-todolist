@@ -65,7 +65,8 @@
         this.newTodo = ''
       },
       removeTodo(todo) {
-        this.todos = _.without(this.todos, todo)
+        var index = this.todos.indexOf(todo)
+        this.todos.splice(index, 1)
       },
       editTodo(todo) {
         this.editedTodo = todo
