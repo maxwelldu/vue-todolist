@@ -7,7 +7,8 @@
     data: {
       newTodo: '',
       todos: [],
-      editingTodo: null
+      editedTodo: null,
+      beforeEditCache: ''
     },
     // 计算属性
     computed: {
@@ -23,7 +24,7 @@
     methods: {
       addTodo() {
         this.newTodo = this.newTodo.trim()
-        if (this.newTodo.length < 1) {
+        if (!this.newTodo) {
           return
         }
         this.todos.unshift({
@@ -32,16 +33,37 @@
         })
         this.newTodo = ''
       },
-      deleteTodo(todo) {
+      removeTodo(todo) {
         this.todos = _.without(this.todos, todo)
       },
       editTodo(todo) {
-        this.editingTodo = todo
+        this.editedTodo = todo
+        this.beforeEditCache = todo.title
+      },
+      doneEdit(todo) {
+        if (!this.editedTodo) {
+          return;
+        }
+        this.editedTodo = null;
+        todo.title = todo.title.trim()
+        if (!todo.title) {
+          this.removeTodo(todo)
+        }
+      },
+      cancelEdit(todo) {
+        if (this.editedTodo) {
+          todo.title = this.beforeEditCache
+          this.editedTodo = null
+        }
       }
     },
     // 指令集合
-    directive: {
-
+    directives: {
+      focus: {
+        update(el) {
+          el.focus()
+        }
+      }
     },
   })
 })();
