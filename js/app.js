@@ -39,6 +39,9 @@
           completed: false
         })
         this.newTodo = ''
+      },
+      deleteTodo(todo) {
+        this.todos = _.without(this.todos, todo)
       }
     },
     // 指令集合

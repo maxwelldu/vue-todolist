@@ -14,7 +14,9 @@
     @keyup.enter="addTodo"
     />
    </header>
-   <section class="main" v-show="showTodos">
+   <section class="main"
+   v-show="showTodos"
+   >
     <input class="toggle-all" id="toggle-all" type="checkbox" />
     <label for="toggle-all">一键全部完成</label>
     <ul class="todo-list">
@@ -28,13 +30,17 @@
          v-model="todo.completed"
          />
          <label>{{ todo.title }}</label>
-         <button class="destroy"></button>
+         <button class="destroy"
+           @click="deleteTodo(todo)"
+         ></button>
         </div>
         <input class="edit" value="a" />
       </li>
     </ul>
    </section>
-   <footer class="footer" style="display: block;">
+   <footer class="footer"
+   v-show="showTodos"
+   >
     <span class="todo-count"><strong>2</strong> 项未完成</span>
     <ul class="filters">
      <li> <a class="selected" href="#/">全部</a> </li>
@@ -45,6 +51,7 @@
    </footer>
   </section>
   <script src="./node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script src="./node_modules/underscore/underscore.js" charset="utf-8"></script>
   <script src="./js/app.js" charset="utf-8"></script>
   <script src="./js/store.js" charset="utf-8"></script>
  </body>
