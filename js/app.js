@@ -4,6 +4,9 @@
     active: todos => todos.filter(todo => !todo.completed),
     completed: todos => todos.filter(todo => todo.completed)
   }
+  var visibility = location.hash.substr(location.hash.indexOf('/')+1)
+  visibility = visibility === '' ? 'all' : visibility
+
   // 实例化
   var app = new Vue({
     // 挂载元素
@@ -13,7 +16,8 @@
       newTodo: '',
       todos: todoStorage.fetch(),
       editedTodo: null,
-      beforeEditCache: ''
+      beforeEditCache: '',
+      visibility
     },
     // 计算属性
     computed: {
@@ -21,7 +25,10 @@
         return this.todos.length > 0
       },
       activeCount() {
-        return filters.active(this.todos).length;
+        return filters.active(this.todos).length
+      },
+      completedCount() {
+        return filters.completed(this.todos).length
       },
       allDone: {
         get() {
@@ -32,6 +39,9 @@
             todo.completed = value
           })
         }
+      },
+      filteredTodos() {
+        return filters[this.visibility](this.todos)
       }
     },
     // 属性观察

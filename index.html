@@ -23,7 +23,7 @@
     <label for="toggle-all">一键全部完成</label>
     <ul class="todo-list">
       <li
-        v-for="(todo, index) in todos"
+        v-for="(todo, index) in filteredTodos"
         :key="'todo-' + index"
         :class="{ completed: todo.completed, editing: todo === editedTodo}"
       >
@@ -51,9 +51,18 @@
    >
     <span class="todo-count"><strong>{{ activeCount }}</strong> 项未完成</span>
     <ul class="filters">
-     <li> <a class="selected" href="#/">全部</a> </li>
-     <li> <a href="#/active">未完成</a> </li>
-     <li> <a href="#/completed">已完成</a> </li>
+     <li> <a href="#/"
+       :class="{ selected: visibility === 'all' }"
+       @click="visibility='all'"
+       >全部</a> </li>
+     <li> <a href="#/active"
+       :class="{ selected: visibility === 'active' }"
+       @click="visibility='active'"
+       >未完成</a> </li>
+     <li> <a href="#/completed"
+       :class="{ selected: visibility === 'completed' }"
+       @click="visibility='completed'"
+       >已完成</a> </li>
     </ul>
     <button class="clear-completed">清空已完成</button>
    </footer>
