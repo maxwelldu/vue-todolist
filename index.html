@@ -14,7 +14,7 @@
     @keyup.enter="addTodo"
     />
    </header>
-   <section class="main" style="display: block;">
+   <section class="main" v-show="showTodos">
     <input class="toggle-all" id="toggle-all" type="checkbox" />
     <label for="toggle-all">一键全部完成</label>
     <ul class="todo-list">

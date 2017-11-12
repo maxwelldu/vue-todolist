@@ -19,7 +19,9 @@
     },
     // 计算属性
     computed: {
-
+      showTodos() {
+        return this.todos.length > 0
+      }
     },
     // 属性观察
     watch: {
