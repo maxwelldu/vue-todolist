@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="./style/index.css" />
  </head>
  <body>
-  <section class="todoapp" v-cloak>
+  <section class="todoapp">
    <header class="header">
     <h1>云备忘录</h1>
     <input class="new-todo" placeholder="接下来要做什么?" autofocus=""
@@ -31,7 +31,7 @@
          <input class="toggle" type="checkbox"
          v-model="todo.completed"
          />
-         <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
+         <label @dblclick="editTodo(todo)" v-cloak>{{ todo.title }}</label>
          <button class="destroy"
            @click="removeTodo(todo)"
          ></button>
@@ -49,7 +49,7 @@
    <footer class="footer"
    v-show="showTodos"
    >
-    <span class="todo-count"><strong>{{ activeCount }}</strong> 项未完成</span>
+    <span class="todo-count"><strong v-cloak>{{ activeCount }}</strong> 项未完成</span>
     <ul class="filters">
      <li> <a href="#/"
        :class="{ selected: visibility === 'all' }"
