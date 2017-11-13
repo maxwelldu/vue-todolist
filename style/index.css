@@ -379,5 +379,5 @@ html .clear-completed:active {
 	text-decoration: none;
 }
 [v-cloak] {
-	display: none;
+	display: none !important;
 }
