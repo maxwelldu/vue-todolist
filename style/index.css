@@ -378,3 +378,6 @@ html .clear-completed:active {
 	color: #333;
 	text-decoration: none;
 }
+[v-cloak] {
+	display: none;
+}
